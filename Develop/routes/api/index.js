@@ -1,10 +1,20 @@
-const router = require('express').Router();
-const categoryRoutes = require('./category-routes');
-const productRoutes = require('./product-routes');
-const tagRoutes = require('./tag-routes');
+// import models
+import Product from './Product';
+import Category from './Category';
+import Tag from './Tag';
+import ProductTag from './ProductTag';
 
-router.use('/categories', categoryRoutes);
-router.use('/products', productRoutes);
-router.use('/tags', tagRoutes);
+// Products belongsTo Category
 
-module.exports = router;
+// Categories have many Products
+
+// Products belongToMany Tags (through ProductTag)
+
+// Tags belongToMany Products (through ProductTag)
+
+export default {
+  Product,
+  Category,
+  Tag,
+  ProductTag,
+};
